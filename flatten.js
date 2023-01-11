@@ -20,8 +20,15 @@ const assertArraysEqual = function(array1, array2) {
     console.log(`😡 Assertion Failed: [${array1}] !== [${array2}]`);
 };
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // => true
-assertArraysEqual([1, 2, 3], [3, 2, 1]); // => false
+const flatten = function(arrays) {
+  let result = [];
+  for (let array of arrays) {
+    if (Array.isArray(array))
+      result = result.concat(array);
+    else
+      result.push(array);
+  }
+  return result;
+};
 
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]); // => [1, 2, 3, 4, 5, 6]
