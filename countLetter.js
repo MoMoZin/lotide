@@ -19,6 +19,12 @@ const countLetters = function (sentence) {
     }
   }
   console.log(result);
+  return result;
 }
 
-countLetters("lighthouse in the house");
+const result = countLetters("lighthouse in the house");
+
+assertEqual(result['l'], 1);
+assertEqual(result['i'], 2);
+assertEqual(result['h'], 4);
+assertEqual(result['e'], 3);
