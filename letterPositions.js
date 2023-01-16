@@ -1,4 +1,4 @@
-const eqArrays = function (array1, array2) {
+const eqArrays = function(array1, array2) {
   let result = true;
   if (array1.length !== array2.length) {
     result = false;
@@ -13,7 +13,7 @@ const eqArrays = function (array1, array2) {
   return result;
 };
 
-const assertArraysEqual = function (array1, array2) {
+const assertArraysEqual = function(array1, array2) {
 
   if (eqArrays(array1, array2)) {
     console.log(`👽 Assertion Passed: [${array1}] === [${array2}]`);
@@ -23,7 +23,7 @@ const assertArraysEqual = function (array1, array2) {
   }
 };
 
-const letterPositions = function (sentence) {
+const letterPositions = function(sentence) {
   const results = {};
   for (let i = 0; i < sentence.length; i++) {
     let char = sentence.charAt(i);
@@ -49,3 +49,5 @@ assertArraysEqual(result['o'], [4]);
 
 const result2 = letterPositions("lighthouse in the house");
 console.log('result2', result2);
+
+module.exports = letterPositions;

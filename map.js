@@ -37,3 +37,5 @@ console.log(results1);
 assertArraysEqual(map(words, word => word[0]), ['g', 'c', 't', 'm', 't']);
 assertArraysEqual(map(words, word => word + 's'), ["grounds", "controls", "tos", "majors", "toms"]);
 assertArraysEqual(map(words, word => word.toUpperCase()), ["GROUND", "CONTROL", "TO", "MAJOR", "TOM"]);
+
+module.exports = map;

@@ -1,17 +1,19 @@
-const eqArrays = function(array1, array2) {
-  let result = true;
-  if (array1.length !== array2.length) {
-    result = false;
-  }
+const eqArrays = require('./eqArrays');
 
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      result = false;
-    }
-  }
+// const eqArrays = function(array1, array2) {
+//   let result = true;
+//   if (array1.length !== array2.length) {
+//     result = false;
+//   }
 
-  return result;
-};
+//   for (let i = 0; i < array1.length; i++) {
+//     if (array1[i] !== array2[i]) {
+//       result = false;
+//     }
+//   }
+
+//   return result;
+// };
 
 const eqObjects = function(obj1, obj2) {
 
@@ -40,3 +42,5 @@ const assertObjectsEqual = function(obj1, obj2) {
 
 assertObjectsEqual({ a: '1', b: 2 }, { b: 3, a: '1' }); //FAILED
 assertObjectsEqual({ a: '1', b: 2 }, { b: 2, a: '1' }); //PASS
+
+module.exports = assertObjectsEqual;
