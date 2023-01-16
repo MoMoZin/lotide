@@ -29,13 +29,11 @@ const middle = (source) => {
   if (length < 3) {
     return result;
   }
-
+  const middleIndex = Math.floor(length / 2);
   if (length % 2 === 0) {
-    const middleIndex = Math.floor(length / 2);
     result.push(source[middleIndex - 1]);
     result.push(source[middleIndex]);
   } else {
-    const middleIndex = Math.floor(length / 2);
     result.push(source[middleIndex]);
   }
   return result;

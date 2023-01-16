@@ -1,11 +1,25 @@
+// const takeUntil = function (array, callback) {
+//   // ...
+//   const result = [];
+//   for (const item of array) {
+//     if (callback(item))
+//       break; //or return result
+//     else
+//       result.push(item);
+//   }
+//   return result;
+// };
+
+//code review 
 const takeUntil = function(array, callback) {
   // ...
-  let result = [];
-  for (let item of array) {
-    if (callback(item))
-      break;
-    else
-      result.push(item);
+  const result = [];
+  for (const item of array) {
+    if (callback(item)) {
+      return result;
+    }
+
+    result.push(item);
   }
   return result;
 };

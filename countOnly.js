@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
 
   if (actual === expected)
     console.log(`👽 Assertion Passed: [${actual}] === [${expected}]`);
@@ -7,35 +7,50 @@ const assertEqual = function (actual, expected) {
 
 };
 
-const countOnly = function (allItems, itemsToCount) {
-  // const resultObj = {};
+// const countOnly = function (allItems, itemsToCount) {
+//   // const resultObj = {};
 
-  // for (let itemKey in itemsToCount) {
-  //   if (itemsToCount[itemKey] && allItems.includes(itemKey)) {
-  //     let count = 0;
-  //     for (let item of allItems) {
-  //       if (item === itemKey) {
-  //         count++;
-  //       }
-  //     }
-  //     resultObj[itemKey] = count;
-  //   }
-  // }
-  // return resultObj;
+//   // for (let itemKey in itemsToCount) {
+//   //   if (itemsToCount[itemKey] && allItems.includes(itemKey)) {
+//   //     let count = 0;
+//   //     for (let item of allItems) {
+//   //       if (item === itemKey) {
+//   //         count++;
+//   //       }
+//   //     }
+//   //     resultObj[itemKey] = count;
+//   //   }
+//   // }
+//   // return resultObj;
 
+//   const results = {};
+//   for (const item of allItems) {
+//     if (itemsToCount[item]) {
+//       if (results[item]) {
+//         results[item] += 1;
+//       }
+//       else {
+//         results[item] = 1;
+//       }
+//     }
+//   }
+//   return results;
+// }
+
+//code review
+const countOnly = function(allItems, itemsToCount) {
   const results = {};
   for (const item of allItems) {
-    if (itemsToCount[item]) {
-      if (results[item]) {
-        results[item] += 1;
-      }
-      else {
-        results[item] = 1;
-      }
+    if (!itemsToCount[item]) {
+      continue;
     }
+    if (results[item] === undefined) {
+      results[item] = 0;
+    }
+    results[item] += 1;
   }
   return results;
-}
+};
 
 const firstNames = [
   "Karl",

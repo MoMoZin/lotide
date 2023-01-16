@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
 
   if (actual === expected)
     console.log(`👽 Assertion Passed: [${actual}] === [${expected}]`);
@@ -7,20 +7,36 @@ const assertEqual = function (actual, expected) {
 
 };
 
-const countLetters = function (sentence) {
+// const countLetters = function (sentence) {
+//   const result = {};
+//   let modifiedS = sentence.toLowerCase().split(" ").join("");
+//   for (let char of modifiedS) {
+//     if (result[char]) {
+//       result[char] += 1;
+//     }
+//     else {
+//       result[char] = 1;
+//     }
+//   }
+//   console.log(result);
+//   return result;
+// }
+
+//code review
+const countLetters = function(sentence) {
   const result = {};
-  let modifiedS = sentence.toLowerCase().split(" ").join("");
-  for (let char of modifiedS) {
-    if (result[char]) {
-      result[char] += 1;
+
+  for (const char of sentence) {
+    if (char === ' ') {
+      continue;
     }
-    else {
-      result[char] = 1;
+    if (!result[char]) {
+      result[char] = 0;
     }
+    result[char]++;
   }
-  console.log(result);
   return result;
-}
+};
 
 const result = countLetters("lighthouse in the house");
 
